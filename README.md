@@ -69,7 +69,8 @@ Full breakdown and visualizations: `results/walk_forward_comparison.png`, `resul
 │   │   ├── fetcher.py                # Binance API client (retry/backoff/caching)
 │   │   ├── fetch_extended_history.py # 2-year hourly data fetch
 │   │   ├── indicators.py             # Technical indicator engineering
-│   │   └── preprocess.py             # Scaling, windowing, train/test splits
+│   │   ├── preprocess.py             # Scaling, windowing, train/test splits
+│   │   └── regenerate_processed_data.py  # Rebuilds X/y arrays from extended dataset
 │   ├── env/
 │   │   ├── updated_rl_env.py         # Gymnasium trading environment
 │   │   ├── updated_rl_env_v2.py      # Extended env with configurable reward mode
@@ -84,6 +85,7 @@ Full breakdown and visualizations: `results/walk_forward_comparison.png`, `resul
 │   ├── evaluation/
 │   │   ├── evaluate_agent.py         # Sharpe/drawdown/win-rate evaluation vs benchmarks
 │   │   ├── debug_environments.py     # Backtest sanity-check diagnostics
+│   │   ├── diagnose_zero_trades.py   # Action-distribution diagnostic for training/eval behavior
 │   │   ├── walk_forward_utils.py     # Walk-forward window generation
 │   │   └── evaluate_walk_forward.py  # Results aggregation and comparison plots
 │   ├── analysis/
@@ -110,6 +112,7 @@ python src/data/fetch_extended_history.py
 # 2. Compute technical indicators and preprocess
 python src/data/indicators.py
 python src/data/preprocess.py
+python src/data/regenerate_processed_data.py
 
 # 3. Run walk-forward validation (45 training runs)
 python src/training/train_walk_forward.py
