@@ -62,8 +62,6 @@ Full breakdown and visualizations: `results/walk_forward_comparison.png`, `resul
 ```
 ├── README.md
 ├── requirements.txt
-├── docs/
-│   └── project_report.pdf
 ├── src/
 │   ├── data/
 │   │   ├── fetcher.py                # Binance API client (retry/backoff/caching)
