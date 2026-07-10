@@ -1,0 +1,35 @@
+# Environments
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Data (large, regenerable via fetch_extended_history.py + preprocess.py)
+data/raw/*.csv
+data/processed/*.npy
+data/processed/*.csv
+data/realtime/
+
+# Trained models (large binary files — keep only final models via Git LFS or Releases if needed)
+models/*.zip
+models/*.h5
+models/*.pkl
+!models/.gitkeep
+
+# Logs and experiment tracking
+logs/
+tensorboard_logs/
+results/walk_forward/all_results.json.tmp
+
+# OS/editor cruft
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Backup files created during long training runs
+*_backup_*.json
+all_results_SAFE_BACKUP.json
